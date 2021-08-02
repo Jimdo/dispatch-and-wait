@@ -1,3 +1,7 @@
+#!/bin/bash 
+set -eu
+set -o pipefail
+
 function trigger_workflow {
   echo "Triggering ${INPUT_EVENT_TYPE} in ${INPUT_OWNER}/${INPUT_REPO}"
   resp=$(curl -X POST -s "https://api.github.com/repos/${INPUT_OWNER}/${INPUT_REPO}/dispatches" \
