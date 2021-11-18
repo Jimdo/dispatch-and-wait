@@ -51,6 +51,7 @@ function find_workflow {
   conclusion=$(echo $workflow | jq '.conclusion')
   
   echo "Workflow id is ${wfid}"
+  echo "Workflow url is https://github.com/${INPUT_OWNER}/${INPUT_REPO}/actions/runs/${wfid}"
 }
 
 function wait_on_workflow {
